@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Disco ball</title>
+
+	<style type="text/css">
+		body{
+		}
+	</style>
+
+</head>
+
+<button class="disco">Disco</button> <button class="confetti">Confetti</button> <button class="both">Double trouble</button>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="vector.js"></script>
+<script src="disco.js"></script>
+<script src="confetti.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('button.disco').on('click', function(){
+		Disco.show();
+	});
+	$('button.confetti').on('click', function(){
+		Confetti.show(Math.random() > .5, true);
+	});
+	$('button.both').on('click', function(){
+		Disco.show();
+		Confetti.show(false, true);
+	});
+})
+</script>
+</html>
